@@ -13,3 +13,8 @@ add_executable(btop ${sources})
 
 # 强制使用 C++20 标准
 target_compile_features(btop PUBLIC cxx_std_20)
+
+# 为调试模式配置编译器选项
+# if(CMAKE_BUILD_TYPE MATCHES Debug)
+    target_compile_options(btop PRIVATE -g -O0)
+# endif()
